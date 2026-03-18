@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dex26qvnc84bi"]
+
+[ext_resource type="Texture2D" uid="uid://c0md215ma4mfu" path="res://assets/png/spoon.png" id="1_rrmcp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rrmcp"]
+radius = 194.38184
+height = 388.76367
+
+[node name="Spoon" type="Sprite2D" unique_id=646941669]
+rotation = 0.7400195
+texture = ExtResource("1_rrmcp")
+flip_v = true
+
+[node name="SpoonCup" type="Node2D" parent="." unique_id=1704145051]
+position = Vector2(-340.18106, 87.188576)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=260858195]
+collision_layer = 128
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2092686339]
+position = Vector2(-339.9886, 82.950294)
+shape = SubResource("CapsuleShape2D_rrmcp")

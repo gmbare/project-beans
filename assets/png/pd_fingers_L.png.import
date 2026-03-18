@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw42mn1w1nrcq"
-path="res://.godot/imported/pd_hand_R.png-5291c4b31fac9fc7676df94cdc41fbda.ctex"
+uid="uid://dr7pq0aferyx6"
+path="res://.godot/imported/pd_fingers_L.png-b882a7045ee8a9c0cf6c003c046146f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pd_hand_R.png"
-dest_files=["res://.godot/imported/pd_hand_R.png-5291c4b31fac9fc7676df94cdc41fbda.ctex"]
+source_file="res://assets/png/pd_fingers_L.png"
+dest_files=["res://.godot/imported/pd_fingers_L.png-b882a7045ee8a9c0cf6c003c046146f5.ctex"]
 
 [params]
 

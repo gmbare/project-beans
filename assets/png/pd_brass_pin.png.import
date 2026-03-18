@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgs5f7ei7u5no"
-path="res://.godot/imported/tmp_arm.png-79bea08f70fcc4276b4c0bd81b0ae3de.ctex"
+uid="uid://1f52iq1uhwng"
+path="res://.godot/imported/pd_brass_pin.png-664a18d9a73482bb1aecc3395c1579e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tmp_arm.png"
-dest_files=["res://.godot/imported/tmp_arm.png-79bea08f70fcc4276b4c0bd81b0ae3de.ctex"]
+source_file="res://assets/png/pd_brass_pin.png"
+dest_files=["res://.godot/imported/pd_brass_pin.png-664a18d9a73482bb1aecc3395c1579e9.ctex"]
 
 [params]
 
