@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://41v3baeymej6" path="res://assets/png/pd_palm_R.png" id="11_lf704"]
 [ext_resource type="Texture2D" uid="uid://ctqxgnmsf24q3" path="res://assets/png/bean_can.png" id="12_12qpl"]
 [ext_resource type="Texture2D" uid="uid://cfouyafbwhciu" path="res://assets/png/pd_fingers_R.png" id="13_i61gw"]
+[ext_resource type="Script" uid="uid://2ev0fhtnbhs5" path="res://lib/scenes/bean_eater/spoon_hand.gd" id="14_whoyo"]
+[ext_resource type="Texture2D" uid="uid://dcge07411gmx2" path="res://icon.svg" id="15_527i7"]
 
 [sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_n6o60"]
 target_nodepath = NodePath("../../../IK Targets/HandL Target")
@@ -75,8 +77,8 @@ modifications/3 = SubResource("SkeletonModification2DLookAt_u21pv")
 [node name="Node2D" type="Node2D" unique_id=1249512560]
 
 [node name="Character" type="Node2D" parent="." unique_id=986810984]
-position = Vector2(399, 399)
-scale = Vector2(0.2, 0.2)
+position = Vector2(375, 342)
+scale = Vector2(0.25, 0.25)
 
 [node name="Body" type="Node2D" parent="Character" unique_id=1039807538]
 
@@ -91,8 +93,8 @@ texture = ExtResource("2_whoyo")
 
 [node name="PdUpperarmL" type="Sprite2D" parent="Character/Body" unique_id=302239752]
 position = Vector2(793.99927, 251.00073)
-rotation = 0.86174065
-scale = Vector2(0.99991363, 0.99991363)
+rotation = 0.5278822
+scale = Vector2(0.99989986, 0.99989986)
 texture = ExtResource("3_527i7")
 offset = Vector2(194, -297.99988)
 
@@ -103,9 +105,9 @@ scale = Vector2(1.000015, 1.000015)
 texture = ExtResource("4_8wi6g")
 
 [node name="PdLowerarmL" type="Sprite2D" parent="Character/Body" unique_id=1993984671]
-position = Vector2(1464.2786, 166.11475)
-rotation = 1.4950469
-scale = Vector2(0.99982846, 0.99982846)
+position = Vector2(1399.4421, -48.836548)
+rotation = 2.3655558
+scale = Vector2(0.9998065, 0.9998065)
 texture = ExtResource("5_jmvpn")
 offset = Vector2(49, -368)
 
@@ -116,9 +118,9 @@ scale = Vector2(1.000015, 1.000015)
 texture = ExtResource("4_8wi6g")
 
 [node name="PdPalmL" type="Sprite2D" parent="Character/Body" unique_id=1138188916]
-position = Vector2(2215.1062, 71.02832)
-rotation = 2.4767509
-scale = Vector2(0.99977064, 0.99977064)
+position = Vector2(1956, 464.00024)
+rotation = 2.486807
+scale = Vector2(0.9997408, 0.9997408)
 texture = ExtResource("6_o81b8")
 offset = Vector2(-29, -125)
 
@@ -139,8 +141,8 @@ offset = Vector2(13, -259)
 
 [node name="PdUpperarmR" type="Sprite2D" parent="Character/Body" unique_id=341518938]
 position = Vector2(159.00049, 322.0005)
-rotation = -1.0812805
-scale = Vector2(0.99994105, 0.99994105)
+rotation = -1.1641566
+scale = Vector2(0.99993646, 0.99993646)
 texture = ExtResource("9_7hdfd")
 offset = Vector2(-180, -276)
 
@@ -152,9 +154,9 @@ texture = ExtResource("4_8wi6g")
 offset = Vector2(2977.9478, 1229.6296)
 
 [node name="PdLowerarmR" type="Sprite2D" parent="Character/Body" unique_id=140790761]
-position = Vector2(-490.90613, 387.0503)
-rotation = 2.7224727
-scale = Vector2(0.99993944, 0.99993944)
+position = Vector2(-483.2904, 440.62756)
+rotation = 2.563541
+scale = Vector2(0.99993235, 0.99993235)
 texture = ExtResource("10_yp0jp")
 offset = Vector2(-9, -427)
 
@@ -166,9 +168,9 @@ texture = ExtResource("4_8wi6g")
 offset = Vector2(2977.9478, 1229.6296)
 
 [node name="PdPalmR" type="Sprite2D" parent="Character/Body" unique_id=1673080151]
-position = Vector2(-165.00012, 1180.0005)
-rotation = -0.039732307
-scale = Vector2(0.9998326, 0.9998326)
+position = Vector2(-36, 1172)
+rotation = -0.03973225
+scale = Vector2(0.9998234, 0.9998234)
 texture = ExtResource("11_lf704")
 offset = Vector2(46, -123)
 
@@ -265,11 +267,16 @@ remote_path = NodePath("../../../../../../../Body/PdPalmR")
 [node name="IK Targets" type="Node2D" parent="." unique_id=679822911]
 
 [node name="HandL Target" type="Node2D" parent="IK Targets" unique_id=326846079]
-position = Vector2(5155, -133)
+position = Vector2(864, 458)
 rotation = 3.1415927
+script = ExtResource("14_whoyo")
 
 [node name="LOOK_AT_MOUTH" type="Node2D" parent="IK Targets/HandL Target" unique_id=456699297]
 position = Vector2(-50000, 0)
+
+[node name="Icon" type="Sprite2D" parent="IK Targets/HandL Target" unique_id=1500601330]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("15_527i7")
 
 [node name="HandR Target" type="Node2D" parent="IK Targets" unique_id=1264930240]
 position = Vector2(366, 635)
