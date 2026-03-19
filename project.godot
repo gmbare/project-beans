@@ -37,6 +37,7 @@ right={
 
 [layer_names]
 
+2d_physics/layer_1="collision"
 2d_physics/layer_8="Bean"
 
 [physics]

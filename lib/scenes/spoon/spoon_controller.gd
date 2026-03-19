@@ -1,4 +1,4 @@
-extends Node2D
+extends CharacterBody2D
 
 enum orient {left, right}
 

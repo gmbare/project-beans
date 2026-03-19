@@ -1,24 +1,35 @@
 [gd_scene format=3 uid="uid://dex26qvnc84bi"]
 
 [ext_resource type="Texture2D" uid="uid://c0md215ma4mfu" path="res://assets/png/spoon.png" id="1_rrmcp"]
+[ext_resource type="Script" uid="uid://cr6rt43q2qihn" path="res://lib/scenes/spoon/spoon_controller.gd" id="2_x3rwx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rrmcp"]
-radius = 194.38184
-height = 1127.7133
+radius = 149.81131
+height = 431.85092
 
-[node name="Spoon" type="Sprite2D" unique_id=646941669]
-rotation = 0.7400195
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrmcp"]
+size = Vector2(748.7106, 133.98183)
+
+[node name="SpoonCharacterBody2D" type="CharacterBody2D" unique_id=298708421]
+collision_mask = 128
+script = ExtResource("2_x3rwx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2092686339]
+position = Vector2(-340.72705, 83.62461)
+rotation = -1.8387969
+shape = SubResource("CapsuleShape2D_rrmcp")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=2108623247]
+position = Vector2(195.66347, -68.97685)
+rotation = -0.28203085
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_rrmcp")
+
+[node name="Spoon" type="Sprite2D" parent="." unique_id=646941669]
+show_behind_parent = true
+rotation = 0.014796853
 texture = ExtResource("1_rrmcp")
 flip_v = true
 
-[node name="SpoonCup" type="Node2D" parent="." unique_id=1704145051]
+[node name="SpoonCup" type="Node2D" parent="Spoon" unique_id=1704145051]
 position = Vector2(-340.18106, 87.188576)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=457187118]
-collision_layer = 128
-collision_mask = 128
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2092686339]
-position = Vector2(16.053558, -10.596382)
-rotation = -1.8387969
-shape = SubResource("CapsuleShape2D_rrmcp")

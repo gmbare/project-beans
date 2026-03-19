@@ -3,6 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://dc6m7sgxsb8hp" path="res://lib/scenes/bean_eater/bean_eater.tscn" id="1_501tv"]
 [ext_resource type="Script" uid="uid://dptvlp6ci4h13" path="res://lib/scenes/bean/bean_spawner.gd" id="2_a56ti"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a56ti"]
+size = Vector2(1342, 66)
+
 [node name="Node2D" type="Node2D" unique_id=465067770]
 
 [node name="BeanEater" parent="." unique_id=1249512560 instance=ExtResource("1_501tv")]
@@ -10,3 +13,21 @@
 [node name="BeanSpawner" type="Node2D" parent="." unique_id=386921750]
 script = ExtResource("2_a56ti")
 bean_uid = "uid://bj87r1eu67q4f"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1479023411]
+collision_mask = 128
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1441170005]
+position = Vector2(1161, 317)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_a56ti")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=993236765]
+position = Vector2(574, -384)
+rotation = 3.1415925
+shape = SubResource("RectangleShape2D_a56ti")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1333710882]
+position = Vector2(-14, 317)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_a56ti")
