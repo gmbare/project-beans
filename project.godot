@@ -14,6 +14,14 @@ config/name="project-beans"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GM="*uid://d2wvc64rfgjwf"
+
+[display]
+
+window/stretch/mode="canvas_items"
+
 [input]
 
 left={

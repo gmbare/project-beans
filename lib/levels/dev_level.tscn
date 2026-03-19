@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b0valyfgge0uc"]
+
+[ext_resource type="PackedScene" uid="uid://dc6m7sgxsb8hp" path="res://lib/scenes/bean_eater/bean_eater.tscn" id="1_501tv"]
+[ext_resource type="Script" uid="uid://dptvlp6ci4h13" path="res://lib/scenes/bean/bean_spawner.gd" id="2_a56ti"]
+
+[node name="Node2D" type="Node2D" unique_id=465067770]
+
+[node name="BeanEater" parent="." unique_id=1249512560 instance=ExtResource("1_501tv")]
+
+[node name="BeanSpawner" type="Node2D" parent="." unique_id=386921750]
+script = ExtResource("2_a56ti")
+bean_uid = "uid://bj87r1eu67q4f"
