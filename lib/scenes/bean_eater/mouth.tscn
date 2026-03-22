@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cp213gmrn6bq"]
+
+[ext_resource type="Texture2D" uid="uid://bg2henvsu03el" path="res://assets/png/pd_open_mouth.png" id="1_egpbr"]
+[ext_resource type="Script" uid="uid://bpqpwabv62a3f" path="res://lib/scenes/bean_eater/mouth.gd" id="1_ncqsg"]
+[ext_resource type="Texture2D" uid="uid://u66l6huuh86p" path="res://assets/png/pd_close_mouth.png" id="2_ncqsg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ncqsg"]
+radius = 113.746666
+height = 264.4622
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iv1xg"]
+radius = 571.7649
+height = 1143.5298
+
+[node name="Mouth" type="Node2D" unique_id=1782275077 node_paths=PackedStringArray("closed", "open")]
+script = ExtResource("1_ncqsg")
+closed = NodePath("PdCloseMouth")
+open = NodePath("PdOpenMouth")
+
+[node name="EatingRadius" type="Area2D" parent="." unique_id=1439899860]
+collision_layer = 0
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EatingRadius" unique_id=1358923914]
+position = Vector2(5, 8)
+rotation = -0.9197096
+shape = SubResource("CapsuleShape2D_ncqsg")
+
+[node name="PrepareRadius" type="Area2D" parent="." unique_id=225154753]
+collision_layer = 0
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PrepareRadius" unique_id=715112438]
+position = Vector2(5, 8)
+rotation = -0.9197096
+shape = SubResource("CapsuleShape2D_iv1xg")
+
+[node name="PdCloseMouth" type="Sprite2D" parent="." unique_id=852524632]
+texture = ExtResource("2_ncqsg")
+
+[node name="PdOpenMouth" type="Sprite2D" parent="." unique_id=1865465526]
+texture = ExtResource("1_egpbr")
+
+[connection signal="body_entered" from="EatingRadius" to="." method="_on_eating_radius_body_entered"]
+[connection signal="body_exited" from="EatingRadius" to="." method="_on_eating_radius_body_exited"]
+[connection signal="body_entered" from="PrepareRadius" to="." method="_on_prepare_radius_body_entered"]
+[connection signal="body_exited" from="PrepareRadius" to="." method="_on_prepare_radius_body_exited"]
