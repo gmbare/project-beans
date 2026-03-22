@@ -13,6 +13,6 @@ position = Vector2(-11, -117)
 texture = ExtResource("2_1630v")
 
 [node name="Mouth" parent="PdFaceEyeCutouts" unique_id=1782275077 instance=ExtResource("2_wydqn")]
-position = Vector2(-14, 328)
+position = Vector2(-6, 186)
 
 [editable path="Eyes"]
