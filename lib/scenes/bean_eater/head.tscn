@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dkt0s7glqgvrk"]
+
+[ext_resource type="Texture2D" uid="uid://cqag0tj681f1y" path="res://assets/png/pd_face_eye_cutouts.png" id="2_1630v"]
+[ext_resource type="PackedScene" uid="uid://cp213gmrn6bq" path="res://lib/scenes/bean_eater/mouth.tscn" id="2_wydqn"]
+[ext_resource type="PackedScene" uid="uid://c55tn55trf2ad" path="res://lib/scenes/bean_eater/eyes.tscn" id="3_wydqn"]
+
+[node name="Head" type="Node2D" unique_id=1524153470]
+
+[node name="Eyes" parent="." unique_id=1641253375 instance=ExtResource("3_wydqn")]
+position = Vector2(-11, -117)
+
+[node name="PdFaceEyeCutouts" type="Sprite2D" parent="." unique_id=24472436]
+texture = ExtResource("2_1630v")
+
+[node name="Mouth" parent="PdFaceEyeCutouts" unique_id=1782275077 instance=ExtResource("2_wydqn")]
+position = Vector2(-14, 328)
+
+[editable path="Eyes"]

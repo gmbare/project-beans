@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c55tn55trf2ad"]
+
+[ext_resource type="Texture2D" uid="uid://cyra51dy5j7va" path="res://assets/png/pd_inner_eyes.png" id="1_75v7u"]
+[ext_resource type="Script" uid="uid://y34x1xivkevk" path="res://lib/scenes/bean_eater/eyes.gd" id="1_kyon2"]
+[ext_resource type="Texture2D" uid="uid://cb01i2kqjkvdj" path="res://assets/png/pd_pupil.png" id="2_aapam"]
+
+[node name="Eyes" type="Node2D" unique_id=1641253375]
+script = ExtResource("1_kyon2")
+
+[node name="PdInnerEyes" type="Sprite2D" parent="." unique_id=230111153]
+texture = ExtResource("1_75v7u")
+
+[node name="PdPupil" type="Sprite2D" parent="." unique_id=1806706998]
+position = Vector2(-119, -13)
+texture = ExtResource("2_aapam")
+
+[node name="PdPupil2" type="Sprite2D" parent="." unique_id=409708773]
+position = Vector2(138, -13)
+texture = ExtResource("2_aapam")
