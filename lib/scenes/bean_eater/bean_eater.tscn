@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://41v3baeymej6" path="res://assets/png/pd_palm_R.png" id="11_lf704"]
 [ext_resource type="Texture2D" uid="uid://ctqxgnmsf24q3" path="res://assets/png/bean_can.png" id="12_12qpl"]
 [ext_resource type="Texture2D" uid="uid://cfouyafbwhciu" path="res://assets/png/pd_fingers_R.png" id="13_i61gw"]
-[ext_resource type="Script" uid="uid://2ev0fhtnbhs5" path="res://lib/scenes/bean_eater/spoon_hand.gd" id="14_whoyo"]
 [ext_resource type="Texture2D" uid="uid://dcge07411gmx2" path="res://icon.svg" id="15_527i7"]
 
 [sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_n6o60"]
@@ -65,6 +64,43 @@ modification_count = 3
 modifications/0 = SubResource("SkeletonModification2DCCDIK_n6o60")
 modifications/1 = SubResource("SkeletonModification2DLookAt_88f2c")
 modifications/2 = SubResource("SkeletonModification2DCCDIK_u21pv")
+
+[sub_resource type="GDScript" id="GDScript_whoyo"]
+script/source = "extends Node2D
+
+enum orient {left, right}
+
+var curr_orientation : orient = orient.left
+var rotations : Dictionary = {
+	orient.left : 0.0,
+	orient.right : 180
+}
+
+var tween : Tween
+@export var anim_player : AnimationPlayer
+
+func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		position.x += event.relative.x
+		position.y += event.relative.y
+		position.x = clampf(position.x, 0 ,GM.win_size.x)
+		position.y = clampf(position.y, 0 ,GM.win_size.y)
+	if event.is_action('left'):
+		if curr_orientation == orient.right:
+			if anim_player.is_playing():
+				anim_player.stop()
+			anim_player.play('flip_spoon',-1,-1.0,true)
+			curr_orientation = orient.left
+	elif event.is_action('right'):
+		if curr_orientation == orient.left:
+			if anim_player.is_playing():
+				anim_player.stop()
+			anim_player.play('flip_spoon',-1,1.0,false)
+			curr_orientation = orient.right
+"
 
 [sub_resource type="Animation" id="Animation_8wi6g"]
 length = 0.001
@@ -288,7 +324,7 @@ remote_path = NodePath("../../../../../../../Body/PdPalmR")
 
 [node name="HandL Target" type="Node2D" parent="IK Targets" unique_id=326846079 node_paths=PackedStringArray("anim_player")]
 position = Vector2(1186, 422)
-script = ExtResource("14_whoyo")
+script = SubResource("GDScript_whoyo")
 anim_player = NodePath("../../AnimationPlayer")
 
 [node name="Icon" type="Sprite2D" parent="IK Targets/HandL Target" unique_id=1500601330]
