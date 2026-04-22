@@ -157,6 +157,16 @@ scale = Vector2(75, 75)
 theme_override_constants/outline_size = 5
 text = "Exit"
 
+[node name="Label2" type="Label" parent="Node2D/ExitBean" unique_id=1973102888]
+offset_left = -1130.8993
+offset_top = -1346.3132
+offset_right = -952.8993
+offset_bottom = -1323.3132
+rotation = -3.5076094
+scale = Vector2(35, 35)
+theme_override_constants/outline_size = 5
+text = "Not supported for Web"
+
 [node name="Label" type="Label" parent="Node2D" unique_id=891255419]
 offset_left = -228.0
 offset_top = -228.50125

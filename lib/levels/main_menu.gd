@@ -14,6 +14,7 @@ enum Selections {Play, Settings, Exit}
 var current_selection : Selections = Selections.Play
 
 func _ready() -> void:
+	GM.curr_scene = self
 	menu_selectors.position = GM.win_size / 2
 	background.polygon[0] = Vector2.ZERO
 	background.polygon[1] = Vector2(0.0, GM.win_size.y)
@@ -60,8 +61,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept") or event.is_action_pressed("left"):
 		match current_selection:
 			Selections.Play:
-				GM.load_scene("uid://b0valyfgge0uc", self)
+				GM.load_new_scene("uid://b0valyfgge0uc")
 			Selections.Settings:
 				print("Hellow")
 			Selections.Exit:
-				GM.quit_game()
+				#GM.quit_game()
+				print("This is where I'd quit the game if I wasn't a web-build")

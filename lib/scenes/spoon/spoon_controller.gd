@@ -21,17 +21,19 @@ func _ready() -> void:
 	flip(rot_angles.left)
 	
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+	if event is InputEventMouseMotion:
 		position.x += event.relative.x
 		position.y += event.relative.y
 		position.x = clampf(position.x, 0 ,GM.win_size.x)
 		position.y = clampf(position.y, 0 ,GM.win_size.y)
 	if event.is_action('left'):
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		if rotation_degrees <= 90:
 			bump(rot_angles.left)
 		else:
 			flip(rot_angles.left)
 	elif event.is_action('right'):
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		if rotation_degrees >= 90:
 			bump(rot_angles.right)
 		else:
