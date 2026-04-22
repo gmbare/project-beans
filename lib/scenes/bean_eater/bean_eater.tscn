@@ -328,6 +328,7 @@ script = SubResource("GDScript_whoyo")
 anim_player = NodePath("../../AnimationPlayer")
 
 [node name="Icon" type="Sprite2D" parent="IK Targets/HandL Target" unique_id=1500601330]
+visible = false
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("15_527i7")
 

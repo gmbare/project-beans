@@ -1,0 +1,177 @@
+[gd_scene format=3 uid="uid://clrcamjrtn2fk"]
+
+[ext_resource type="Texture2D" uid="uid://oadb4aijbk5o" path="res://assets/png/Bean.png" id="1_o1nr6"]
+[ext_resource type="Script" uid="uid://cxfqrdroieqkf" path="res://lib/levels/main_menu.gd" id="1_rt13k"]
+[ext_resource type="Texture2D" uid="uid://c0md215ma4mfu" path="res://assets/png/spoon.png" id="3_5tcll"]
+[ext_resource type="Texture2D" uid="uid://ctqxgnmsf24q3" path="res://assets/png/bean_can.png" id="4_y8byj"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_o1nr6"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(650, 1, 1)
+angle_min = 1.0728835e-05
+angle_max = 270.0
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, 98, 0)
+scale_min = 0.099999994
+scale_max = 0.25
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y8byj"]
+size = Vector2(1255.8634, 445.87296)
+
+[node name="MainMenu" type="Node" unique_id=1263076780 node_paths=PackedStringArray("background", "falling_beans", "spoon_selector", "play_selector", "settings_selector", "exit_selector", "menu_selectors")]
+script = ExtResource("1_rt13k")
+background = NodePath("Polygon2D")
+falling_beans = NodePath("GPUParticles2D")
+spoon_selector = NodePath("Node2D/SpoonSelector")
+play_selector = NodePath("Node2D/PlayBean")
+settings_selector = NodePath("Node2D/SettingsBean")
+exit_selector = NodePath("Node2D/ExitBean")
+menu_selectors = NodePath("Node2D")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1568955403]
+color = Color(1, 0.786616, 0.4511091, 1)
+polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1080265274]
+visible = false
+position = Vector2(565, -100)
+amount = 150
+texture = ExtResource("1_o1nr6")
+lifetime = 15.0
+process_material = SubResource("ParticleProcessMaterial_o1nr6")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1841680834]
+position = Vector2(586, 302)
+
+[node name="CanButton" type="Sprite2D" parent="Node2D" unique_id=643250482]
+position = Vector2(138, 100)
+rotation = -0.06789657
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_y8byj")
+flip_h = true
+
+[node name="SpoonSelector" type="Sprite2D" parent="Node2D" unique_id=2146613874]
+position = Vector2(-130.00003, -100.50125)
+rotation = -2.9727533
+scale = Vector2(0.15000002, 0.15000002)
+texture = ExtResource("3_5tcll")
+
+[node name="PlayBean" type="Node2D" parent="Node2D" unique_id=940459987]
+position = Vector2(-130.00003, -100.50125)
+rotation = -2.9727533
+scale = Vector2(0.037500005, 0.037500005)
+
+[node name="Bean" type="Sprite2D" parent="Node2D/PlayBean" unique_id=270469289]
+position = Vector2(-2365.583, -705.8601)
+rotation = 2.909079
+scale = Vector2(5.390819, 5.390819)
+texture = ExtResource("1_o1nr6")
+
+[node name="Area2D" type="Area2D" parent="Node2D/PlayBean" unique_id=1074048436]
+position = Vector2(-2365.5833, -705.8617)
+rotation = 2.909079
+scale = Vector2(5.3908186, 5.3908186)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/PlayBean/Area2D" unique_id=1162912321]
+position = Vector2(173.09784, 6.0803638)
+rotation = 0.06450934
+scale = Vector2(1.0000002, 1.0000002)
+shape = SubResource("RectangleShape2D_y8byj")
+
+[node name="Label" type="Label" parent="Node2D/PlayBean" unique_id=1867451372]
+offset_left = -1700.9219
+offset_top = 19.429565
+offset_right = -1660.9219
+offset_bottom = 42.429565
+rotation = -3.303755
+scale = Vector2(75, 75)
+theme_override_constants/outline_size = 5
+text = "Play"
+
+[node name="SettingsBean" type="Node2D" parent="Node2D" unique_id=859361499]
+position = Vector2(130.99988, 13.498726)
+rotation = -0.7928478
+scale = Vector2(0.037500005, 0.037500005)
+
+[node name="Bean2" type="Sprite2D" parent="Node2D/SettingsBean" unique_id=1550750882]
+position = Vector2(-2220.4692, -619.9531)
+rotation = 0.09414884
+scale = Vector2(5.3908195, 5.3908195)
+texture = ExtResource("1_o1nr6")
+
+[node name="Area2D" type="Area2D" parent="Node2D/SettingsBean/Bean2" unique_id=1299350067]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/SettingsBean/Bean2/Area2D" unique_id=1328949326]
+position = Vector2(-260.7367, -212.57544)
+rotation = 0.69953406
+scale = Vector2(1.0000002, 1.0000002)
+shape = SubResource("RectangleShape2D_y8byj")
+
+[node name="Label" type="Label" parent="Node2D/SettingsBean" unique_id=487147285]
+offset_left = -4438.026
+offset_top = -4162.678
+offset_right = -4376.026
+offset_bottom = -4139.678
+rotation = -5.491231
+scale = Vector2(75, 75)
+theme_override_constants/outline_size = 4
+text = "Settings"
+
+[node name="Label2" type="Label" parent="Node2D/SettingsBean" unique_id=1089202474]
+offset_left = -5912.7007
+offset_top = -3645.6768
+offset_right = -5746.7007
+offset_bottom = -3622.6768
+rotation = -5.4735603
+scale = Vector2(35.53474, 35.53474)
+theme_override_constants/outline_size = 4
+text = "Not Implemented yet"
+
+[node name="ExitBean" type="Node2D" parent="Node2D" unique_id=1860304973]
+position = Vector2(-148.00003, 141.49872)
+rotation = -2.7670774
+scale = Vector2(0.037500005, 0.037500005)
+
+[node name="Bean3" type="Sprite2D" parent="Node2D/ExitBean" unique_id=585169076]
+position = Vector2(-2061.9297, -507.54834)
+rotation = -3.0278914
+scale = Vector2(5.390819, 5.390819)
+texture = ExtResource("1_o1nr6")
+
+[node name="Area2D" type="Area2D" parent="Node2D/ExitBean/Bean3" unique_id=1667098481]
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Node2D/ExitBean/Bean3/Area2D" unique_id=1249755129]
+position = Vector2(300.90137, -182.2124)
+rotation = -0.48738143
+scale = Vector2(1.0000002, 1.0000002)
+shape = SubResource("RectangleShape2D_y8byj")
+
+[node name="Label" type="Label" parent="Node2D/ExitBean" unique_id=159625747]
+offset_left = -2116.7278
+offset_top = 373.5707
+offset_right = -2076.7278
+offset_bottom = 396.5707
+rotation = -3.5076094
+scale = Vector2(75, 75)
+theme_override_constants/outline_size = 5
+text = "Exit"
+
+[node name="Label" type="Label" parent="Node2D" unique_id=891255419]
+offset_left = -228.0
+offset_top = -228.50125
+offset_right = -96.0
+offset_bottom = -205.50125
+scale = Vector2(3.8023906, 3.8023906)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+text = "Bean Eating Fella"
+
+[connection signal="mouse_entered" from="Node2D/PlayBean/Area2D" to="." method="_on_play_area_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/PlayBean/Area2D" to="." method="_on_play_area_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/SettingsBean/Bean2/Area2D" to="." method="_on_settings_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/SettingsBean/Bean2/Area2D" to="." method="_on_settings_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/ExitBean/Bean3/Area2D" to="." method="_on_exit_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/ExitBean/Bean3/Area2D" to="." method="_on_exit_mouse_exited"]
