@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dc6m7sgxsb8hp" path="res://lib/scenes/bean_eater/bean_eater.tscn" id="1_501tv"]
 [ext_resource type="Script" uid="uid://1m4mf0yom0ab" path="res://lib/levels/dev_level.gd" id="1_2715b"]
+[ext_resource type="Texture2D" uid="uid://bpgbvp0trw4w2" path="res://assets/png/theatre_seats.png" id="2_88fl7"]
 [ext_resource type="Script" uid="uid://dptvlp6ci4h13" path="res://lib/scenes/bean/bean_spawner.gd" id="2_a56ti"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a56ti"]
@@ -13,6 +14,21 @@ main_scene = NodePath("Centre")
 
 [node name="Centre" type="Node2D" parent="." unique_id=465067770]
 position = Vector2(503, 310)
+
+[node name="TheatreSeats" type="Sprite2D" parent="Centre" unique_id=1724803691]
+position = Vector2(28.125, -36.397064)
+scale = Vector2(0.2720588, 0.2720588)
+texture = ExtResource("2_88fl7")
+
+[node name="TheatreSeats2" type="Sprite2D" parent="Centre" unique_id=1243349359]
+position = Vector2(721, -53)
+scale = Vector2(0.2720588, 0.2720588)
+texture = ExtResource("2_88fl7")
+
+[node name="TheatreSeats3" type="Sprite2D" parent="Centre" unique_id=1404852413]
+position = Vector2(-663.00006, -16)
+scale = Vector2(0.2720588, 0.2720588)
+texture = ExtResource("2_88fl7")
 
 [node name="BeanEater" parent="Centre" unique_id=1249512560 instance=ExtResource("1_501tv")]
 position = Vector2(-503, -310)
