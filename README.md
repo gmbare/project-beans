@@ -13,4 +13,5 @@ LMB/RMB = Rotate / Bump spoon
 Space = Spawn Bean
 
 <img width="720" height="402" alt="BeanEaterMenu" src="https://github.com/user-attachments/assets/428528bc-4b38-4d26-9bbf-af0229193549" />
-<img width="454" height="254" alt="BeanEaterGame" src="https://github.com/user-attachments/assets/2ce9c28c-f3ab-4b41-b98c-42a4d6eb74a0" />
+<img width="474" height="264" alt="BeanEaterGame" src="https://github.com/user-attachments/assets/30ba253a-b53d-44cf-8a79-93cf0d593796" />
+
